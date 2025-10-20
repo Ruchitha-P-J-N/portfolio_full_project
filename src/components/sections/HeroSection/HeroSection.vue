@@ -54,4 +54,4 @@
   </section>
 </template>
 
-<style scoped src="./HeroSection.scss"></style>
+<style scoped src="./HeroSection.sass"></style>

@@ -89,4 +89,4 @@
 
 <script setup lang="ts" src="./WorkExperience.ts"></script>
 
-<style scoped src="./WorkExperience.scss"></style>
+<style scoped src="./WorkExperience.sass"></style>
