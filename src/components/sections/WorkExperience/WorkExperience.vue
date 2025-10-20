@@ -87,6 +87,8 @@
   </section>
 </template>
 
-<script setup lang="ts" src="./WorkExperience.ts"></script>
+<script setup lang="ts">
+import { experiences, activeIndex } from './WorkExperience.ts'
+</script>
 
 <style scoped src="./WorkExperience.sass"></style>

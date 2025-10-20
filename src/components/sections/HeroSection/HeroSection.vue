@@ -1,4 +1,6 @@
-<script setup lang="ts" src="./HeroSection.ts"></script>
+<script setup lang="ts">
+import { heroImage } from './HeroSection.ts'
+</script>
 
 <template>
   <section class="full-page-section">

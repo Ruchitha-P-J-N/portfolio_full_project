@@ -1,4 +1,6 @@
-<script setup lang="ts" src="./Certification.ts"></script>
+<script setup lang="ts">
+import { awsBadge } from './Certification.ts'
+</script>
 
 <template>
   <section id="certifications" class="certifications-section py-16">
