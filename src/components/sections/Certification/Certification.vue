@@ -95,4 +95,4 @@
   </section>
 </template>
 
-<style scoped src="./Certification.css"></style>
+<style scoped src="./Certification.scss"></style>
