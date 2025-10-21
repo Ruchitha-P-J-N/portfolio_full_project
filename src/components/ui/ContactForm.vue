@@ -67,7 +67,7 @@ type ContactFormData = {
   message: string;
 };
 
-const API_URL = import.meta.env.VITE_CONTACT_API_URL as string | undefined;
+const API_URL = import.meta.env.VITE_CONTACT_API_URL || '/api/contact';
 
 const form = reactive<ContactFormData>({
   name: '',
@@ -90,11 +90,7 @@ async function onSubmit() {
   status.message = '';
   status.error = false;
 
-  if (!API_URL) {
-    status.message = 'Contact API not configured';
-    status.error = true;
-    return;
-  }
+  // API_URL is now always available with fallback
 
   loading.value = true;
   try {
