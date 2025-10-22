@@ -61,12 +61,8 @@ If you want to test the Netlify function locally:
 - ✅ Contact form is configured
 - ✅ Netlify function is ready
 - ✅ Using mock service for testing (httpbin.org)
-- ❌ **NOT receiving real emails** - using mock service
 - ❌ API endpoint needs to be deployed for real emails
 - ❌ Environment variables need to be set for real emails
-
-## Why No Emails?
-You're currently using `https://httpbin.org/post` which is a **mock service** that doesn't send real emails. It only shows the form data for testing purposes.
 
 ## Next Steps
 1. Deploy to Netlify (Option 1) for full functionality
