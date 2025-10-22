@@ -1,61 +1,51 @@
-<template>
-  <v-form @submit.prevent="onSubmit" v-model="isValid">
-    <v-row>
-      <v-col cols="12" md="6">
-        <v-text-field
-          v-model="form.name"
-          label="Name"
-          :rules="[rules.required('Name')]"
-          variant="outlined"
-          density="comfortable"
-          prepend-inner-icon="mdi-account"
-        />
-      </v-col>
-      <v-col cols="12" md="6">
-        <v-text-field
-          v-model="form.email"
-          label="Email"
-          :rules="[rules.required('Email'), rules.email]"
-          variant="outlined"
-          density="comfortable"
-          prepend-inner-icon="mdi-email"
-        />
-      </v-col>
-      <v-col cols="12">
-        <v-textarea
-          v-model="form.message"
-          label="Message"
-          :rules="[rules.required('Message'), rules.min(10)]"
-          variant="outlined"
-          density="comfortable"
-          auto-grow
-          prepend-inner-icon="mdi-message-text-outline"
-        />
-      </v-col>
-      <v-col cols="12" class="d-flex align-center ga-3">
-        <v-btn
-          :loading="loading"
-          :disabled="!isValid || loading"
-          type="submit"
-          color="primary"
-          class="text-none"
-        >
-          <v-icon start icon="mdi-send" />
-          Send
-        </v-btn>
-        <div v-if="status.message">
-          <v-chip
-            :color="status.error ? 'error' : 'success'"
-            variant="flat"
-            size="small"
-            class="text-white"
-          >
-            {{ status.message }}
-          </v-chip>
-        </div>
-      </v-col>
-    </v-row>
-  </v-form>
+<template lang="pug">
+v-form(@submit.prevent="onSubmit" v-model="isValid")
+  v-row
+    v-col(cols="12" md="6")
+      v-text-field(
+        v-model="form.name"
+        label="Name"
+        :rules="[rules.required('Name')]"
+        variant="outlined"
+        density="comfortable"
+        prepend-inner-icon="mdi-account"
+      )
+    v-col(cols="12" md="6")
+      v-text-field(
+        v-model="form.email"
+        label="Email"
+        :rules="[rules.required('Email'), rules.email]"
+        variant="outlined"
+        density="comfortable"
+        prepend-inner-icon="mdi-email"
+      )
+    v-col(cols="12")
+      v-textarea(
+        v-model="form.message"
+        label="Message"
+        :rules="[rules.required('Message'), rules.min(10)]"
+        variant="outlined"
+        density="comfortable"
+        auto-grow
+        prepend-inner-icon="mdi-message-text-outline"
+      )
+    v-col(cols="12" class="d-flex align-center ga-3")
+      v-btn(
+        :loading="loading"
+        :disabled="!isValid || loading"
+        type="submit"
+        color="primary"
+        class="text-none"
+      )
+        v-icon(start icon="mdi-send")
+        | Send
+      div(v-if="status.message")
+        v-chip(
+          :color="status.error ? 'error' : 'success'"
+          variant="flat"
+          size="small"
+          class="text-white"
+        ) {{ status.message }}
 </template>
 
 <script setup lang="ts">

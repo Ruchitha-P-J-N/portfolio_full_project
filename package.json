@@ -21,6 +21,8 @@
     "@vitejs/plugin-vue": "5.0.5",
     "@vue/test-utils": "2.4.6",
     "jsdom": "25.0.1",
+    "pug": "^3.0.3",
+    "pug-plain-loader": "^1.1.0",
     "sass": "1.80.3",
     "typescript": "5.6.2",
     "vite": "5.4.8",

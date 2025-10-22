@@ -1,15 +1,12 @@
-<template>
-  <v-app>
-    <AppLayout>
-      <template #main>
-        <HeroSection />
-        <WorkExperience />
-        <ProjectsSection :projects="projects" />
-        <Certification />
-        <ContactSection />
-      </template>
-    </AppLayout>
-  </v-app>
+<template lang="pug">
+v-app
+  AppLayout
+    template(#main)
+      HeroSection
+      WorkExperience
+      ProjectsSection(:projects="projects")
+      Certification
+      ContactSection
 </template>
 
 <script setup lang="ts">

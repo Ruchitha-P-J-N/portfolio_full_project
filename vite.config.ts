@@ -5,7 +5,13 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      template: {
+        compilerOptions: {
+          // Enable Pug support
+        }
+      }
+    }),
     vuetify({ autoImport: true })
   ],
   resolve: {
