@@ -57,7 +57,7 @@ type ContactFormData = {
   message: string;
 };
 
-const API_URL = import.meta.env.VITE_CONTACT_API_URL || 'https://your-site.netlify.app/api/contact';
+const API_URL = import.meta.env.VITE_CONTACT_API_URL || 'https://httpbin.org/post';
 
 const form = reactive<ContactFormData>({
   name: '',
@@ -80,8 +80,6 @@ async function onSubmit() {
   status.message = '';
   status.error = false;
 
-  // API_URL is now always available with fallback
-
   loading.value = true;
   try {
     const res = await fetch(API_URL, {
@@ -102,7 +100,15 @@ async function onSubmit() {
     form.email = '';
     form.message = '';
   } catch (err: unknown) {
-    status.message = err instanceof Error ? err.message : 'Failed to send message';
+    console.error('Contact form error:', err);
+    
+    if (err instanceof TypeError && err.message.includes('fetch')) {
+      status.message = 'Network error: Please check your internet connection or try again later.';
+    } else if (err instanceof Error && err.message.includes('404')) {
+      status.message = 'Contact API not available. Please contact me directly at rp2374@nau.edu';
+    } else {
+      status.message = err instanceof Error ? err.message : 'Failed to send message';
+    }
     status.error = true;
   } finally {
     loading.value = false;

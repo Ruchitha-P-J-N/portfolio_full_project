@@ -28,15 +28,16 @@ You're getting "Request failed (404)" when submitting the contact form. This mea
      VITE_CONTACT_API_URL=https://your-actual-site.netlify.app/api/contact
      ```
 
-### Option 2: Test with Mock Service (Quick Fix)
-For immediate testing, you can use a mock service:
+### Option 2: Test with Mock Service (Quick Fix) ✅ ACTIVE
+For immediate testing, using httpbin.org mock service:
 
-1. **Update `env.local`:**
+1. **Current setup in `env.local`:**
    ```bash
    VITE_CONTACT_API_URL=https://httpbin.org/post
    ```
 
 2. **This will show the form data being sent (won't actually send emails)**
+3. **The form should now work without 404 errors**
 
 ### Option 3: Local Development Server
 If you want to test the Netlify function locally:
