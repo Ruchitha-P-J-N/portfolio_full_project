@@ -57,7 +57,7 @@ type ContactFormData = {
   message: string;
 };
 
-const API_URL = import.meta.env.VITE_CONTACT_API_URL || '/api/contact';
+const API_URL = import.meta.env.VITE_CONTACT_API_URL || 'https://your-site.netlify.app/api/contact';
 
 const form = reactive<ContactFormData>({
   name: '',
