@@ -60,7 +60,7 @@ section#workExperience
 </template>
 
 <script setup lang="ts">
-import { experiences, activeIndex } from './index.ts'
+import { experiences, activeIndex } from './index'
 </script>
 
 <style scoped src="./index.sass"></style>

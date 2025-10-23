@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { awsBadge } from './index.ts'
+import { awsBadge } from './index'
 </script>
 
 <template lang="pug">

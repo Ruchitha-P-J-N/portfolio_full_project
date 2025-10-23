@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { heroImage } from './index.ts'
+import { heroImage } from './index'
 </script>
 
 <template lang="pug">
