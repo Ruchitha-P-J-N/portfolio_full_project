@@ -1,4 +1,4 @@
-name: ci
+name: CI + Deploy to GitHub Pages
 
 on:
   push:
@@ -6,22 +6,38 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: write  # required to push to gh-pages branch
+
 jobs:
-  build-and-test:
+  build-test-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Use Node
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-      - name: Install
+
+      - name: Install dependencies
         run: npm ci
+
       - name: Type Check
         run: npm run type-check
-      - name: Build
+
+      - name: Build project
         run: npm run build
-      - name: Test
+
+      - name: Run tests
         run: npm test -- --run
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'  # only deploy on main branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
