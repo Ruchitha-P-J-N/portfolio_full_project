@@ -1,19 +1,19 @@
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import vuetify from 'vite-plugin-vuetify';
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import vuetify from 'vite-plugin-vuetify'
 import path from 'path'
 
 export default defineConfig({
-  base: '/portfolio_full_project/',
+  base: '/portfolio_full_project/', // ✅ for GitHub Pages
   plugins: [
     vue({
       template: {
         compilerOptions: {
-          // Enable Pug support
-        }
-      }
+          // You can add custom compiler options here if needed
+        },
+      },
     }),
-    vuetify({ autoImport: true })
+    vuetify({ autoImport: true }),
   ],
   resolve: {
     alias: {
@@ -24,7 +24,7 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: './vitest.setup.ts',
-    css: false,               // ignore all CSS imports
-    mockReset: true   
-  }
-});
+    css: false,
+    mockReset: true,
+  },
+})
