@@ -5,5 +5,5 @@
     "moduleResolution": "Bundler",
     "types": ["node"]
   },
-  "include": ["vite.config.ts"]
+  "include": ["src/components/tests/vite.config.ts"]
 }
